@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <string.h>
+void conjuncao() {
+    printf("A - B - A ^ B\n");
+    for (int A = 0 ; A <= 1; A++) {
+        for (int B = 0; B <= 1; B++) {
+            printf("%d - %d -   %d   \n", A, B, A && B);
+        }
+    }
+}
+void disjuncao() {
+    printf("A - B - A v B\n");
+    for (int A = 0 ; A <= 1; A++) {
+        for (int B = 0; B <= 1; B++) {
+            printf("%d - %d -   %d   \n", A, B, A || B);
+        }
+    }
+}
+void condicional() {
+    printf("A - B - A -> B\n");
+    for (int A = 0 ; A <= 1; A++) {
+        for (int B = 0; B <= 1; B++) {
+            printf("%d - %d -   %d   \n", A, B, !A || B);
+        }
+    }
+}
+void bicondicional() {
+    printf("A - B - A <-> B\n");
+    for (int A = 0 ; A <= 1; A++) {
+        for (int B = 0; B <= 1; B++) {
+            printf("%d - %d -   %d   \n", A, B, (A && B) || (!A && !B));
+        }
+    }
+}
+void exclusivo() {
+    printf("A - B - A ⊕ B\n");
+    for (int A = 0 ; A <= 1; A++) {
+        for (int B = 0; B <= 1; B++) {
+            printf("%d - %d -   %d   \n", A, B, (A || B) && !(A && B));
+        }
+    }
+}
+int main(){
+char tabela[15];
+  printf("digite qual o conectivo lógico escolhido(em minúsculas, sem caracteres especiais):\n");
+  scanf("%s", tabela);
+  if(strcmp(tabela, "conjuncao") == 0){
+    conjuncao();
+  }
+  if(strcmp(tabela, "disjuncao") == 0){
+    disjuncao();
+  }
+  if(strcmp(tabela, "condicional") == 0){
+    condicional();
+  }
+  if(strcmp(tabela, "bicondicional") == 0){
+    bicondicional();
+  }
+  if(strcmp(tabela, "exclusivo") == 0){
+    exclusivo();
+  }
+  return 0;
+}
