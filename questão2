@@ -1,0 +1,23 @@
+#include <stdio.h>
+int mdc(int a, int b) {
+  if (b == 0) {
+      return a;
+  }
+  return mdc(b, a % b);
+}
+int mmc(int a, int b){
+  return (a * b) / mdc(a, b);
+}
+int main() {
+  int a, b;
+  scanf("%d %d", &a, &b);
+  
+  printf("MDC = %d\nMMC = %d",  mdc(a, b), mmc(a, b));
+  return 0;
+}
+/*
+A lógica utilizada foi uma forma recursuva de encontrar o MDC de um número, no qual vai encontrando o resto da divisão dos dois números várias vezes até que "b" seja igual a 0 e o MDC seja igual a "A".
+Já para calcular o MMC, foi utilizada uma relação matématica que MMC = (a * b) / MDC(a, b), ou seja, O MMC de A e B é ogual ao produto dos dois números, dividido pelo MDC entre os dois.
+O algoritmo funciona para números inteiros, exceto quando for "0", nesse caso, seria impossível calcular um MDC, já que não existe divisão por 0.
+Os testes manuais ajudariam a provar a veracidade do código, porém seria impossivel testar todas as situações.
+*/
