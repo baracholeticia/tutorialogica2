@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+int A = 1;
+int B = 0;
+int C = 1;
+  printf("A ^(B v C) = %d\n", (A && (B || C)));
+  printf("(A ^B) v C = %d\n", ((A && B) || C));
+  printf("(A ^B)’ v C = %d\n", (!(A && B) || C));
+  printf("A’ V (B’ ^C) = %d\n", (!A || (!B && C)));
+  return 0;
+}
