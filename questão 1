@@ -1,3 +1,9 @@
+/*
+a) A ^(B v C) = 1
+b)(A ^B) v C = 1
+c)(A ^B)’ v C = 1
+d)A’ V (B’ ^C) = 1
+*/
 #include <stdio.h>
 int main() {
 int A = 1;
